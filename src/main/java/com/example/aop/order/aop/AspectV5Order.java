@@ -27,6 +27,7 @@ public class AspectV5Order {
     @Aspect
     @Order(1)
     public static class TxAspect {
+
         /**
          * com.example.aop.order 의 모든 하위 패키지 이면서 타입(클래스, 인터페이스) 이름 패턴이 *Service
          * '&&'라서 두 조건 모두를 만족해야한다.
