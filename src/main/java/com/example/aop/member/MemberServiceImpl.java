@@ -17,4 +17,8 @@ public class MemberServiceImpl implements MemberService {
     public String internal(String param) {
         return "ok";
     }
+
+    public String twoParams(String param1, String param2) {
+        return "ok";
+    }
 }
