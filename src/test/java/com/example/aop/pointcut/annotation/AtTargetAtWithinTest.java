@@ -1,4 +1,4 @@
-package com.example.aop.pointcut;
+package com.example.aop.pointcut.annotation;
 
 import com.example.aop.member.annotation.ClassAop;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
 
 
 /**
- * 클래스에 붙이는 애노테이션을 기반으로 프록시 더 자세하게는 어드바이저의 포인트컷을 만들 땐 @target, @within 을 사용할 수 있다.
+ * 클래스에 붙이는 애노테이션을 기반으로 포인트컷을 만들 땐 @target, @within 을 사용할 수 있다.
  * */
 @Slf4j
 @Import(AtTargetAtWithinTest.Config.class)
