@@ -1,6 +1,7 @@
 package com.example.aop.pointcut;
 
 import com.example.aop.member.MemberService;
+import com.example.aop.member.MemberServiceImpl;
 import com.example.aop.member.annotation.ClassAop;
 import com.example.aop.member.annotation.MethodAop;
 import com.example.aop.member.annotation.MethodTwoAop;
@@ -58,7 +59,7 @@ public class ParameterTest {
          * this 는 프록시를 받는다.
          * */
         @Before("allMember() && this(obj)")
-        public void thisArgs(JoinPoint joinPoint, Object obj) {
+        public void thisArgs(JoinPoint joinPoint, MemberService obj) {
             log.info("[this]{}, obj = {}", joinPoint.getSignature(), obj.getClass());
         }
 
@@ -66,7 +67,7 @@ public class ParameterTest {
          * target 은 실제 객체를 받는다.
          * */
         @Before("allMember() && target(obj)")
-        public void targetArgs(JoinPoint joinPoint, Object obj) {
+        public void targetArgs(JoinPoint joinPoint, MemberService obj) {
             log.info("[target]{}, obj = {}", joinPoint.getSignature(), obj.getClass());
         }
 
