@@ -7,6 +7,8 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 
+import java.util.Arrays;
+
 @Slf4j
 @Aspect
 public class LogTraceAspect {
@@ -16,13 +18,15 @@ public class LogTraceAspect {
         this.logTrace = logTrace;
     }
 
-    @Around("@within(com.example.aop.exam.annotation.LogTrace)")
-    public Object logTraceAspect(ProceedingJoinPoint joinPoint) throws Throwable {
+    @Around("@within(logTraceAnnotation)")
+    public Object logTraceAspect(ProceedingJoinPoint joinPoint,
+                                 com.example.aop.exam.annotation.LogTrace logTraceAnnotation) throws Throwable {
         TraceStatus status = null;
 
         try {
             // Ex) "OrderController.request()"
-            String message = joinPoint.getSignature().toShortString();
+            String message = joinPoint.getSignature().toShortString() +
+                    " parameter = " + Arrays.toString(joinPoint.getArgs());
 
             status = logTrace.begin(message);
 
