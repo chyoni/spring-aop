@@ -28,7 +28,7 @@ public class ProxyDITest {
     MemberService memberService;
 
     /**
-     * 주입 불가 -> 에러 발생
+     * JDK Dynamic Proxy인 경우 주입 불가 -> 에러 발생
      * */
     @Autowired
     MemberServiceImpl memberServiceImpl;

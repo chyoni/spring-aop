@@ -1,3 +1,3 @@
 spring:
   aop:
-    proxy-target-class: false # true = CGLIB 를 기본으로 / false = JDK 동적 프록시를 기본으로
+    proxy-target-class: true # true = CGLIB 를 기본으로 / false = JDK 동적 프록시를 기본으로
